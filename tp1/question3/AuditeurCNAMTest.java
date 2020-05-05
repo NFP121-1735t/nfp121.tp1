@@ -122,4 +122,80 @@ public class AuditeurCNAMTest extends junit.framework.TestCase {
         assertEquals(" nom avec accent (é devient e) ? ", "chloe_c",
             auditeur1.login());
     }
+
+	
+
+	public void testNomCourt()
+	{
+		question3.AuditeurCNAM auditeur1 = new question3.AuditeurCNAM("leFer", "jolie", "gerege");
+		java.lang.String string1 = auditeur1.login();
+		assertEquals("lefer_j", string1);
+	}
+
+	public void testNomAvecParticule()
+	{
+		question3.AuditeurCNAM auditeur1 = new question3.AuditeurCNAM("Emi Lar", "Emille", "em1234");
+		java.lang.String string1 = auditeur1.login();
+		assertEquals("emi_la_e", string1);
+	}
+
+	public void testNomComposee()
+	{
+		question3.AuditeurCNAM auditeur1 = new question3.AuditeurCNAM("Mar-Noel", "Mrc", "marce234");
+		assertEquals("mar_no_m", auditeur1.login());
+		java.lang.String string1 = auditeur1.login();
+		assertEquals("mar_no_m", string1);
+	}
+
+	public void testNomMajiscule()
+	{
+		question3.AuditeurCNAM auditeur1 = new question3.AuditeurCNAM("MICELLE", "miguel", "m123456");
+		java.lang.String string1 = auditeur1.login();
+		assertEquals("micell_m", string1);
+	}
+
+	public void testNomCourtAvecParticule()
+	{
+		question3.AuditeurCNAM auditeur1 = new question3.AuditeurCNAM("la per", "Perla", "moussaa");
+		java.lang.String string1 = auditeur1.login();
+		assertEquals("la_per_p", string1);
+	}
+
+	public void testNomAvecAccent()
+	{
+		question3.AuditeurCNAM auditeur1 = new question3.AuditeurCNAM("Lèçerge", "Sandra", "lesierge123");
+		java.lang.String string1 = auditeur1.login();
+		assertEquals("lecerg_s", string1);
+	}
+
+	public void testNomCourtAvecAccent()
+	{
+		question3.AuditeurCNAM auditeur1 = new question3.AuditeurCNAM("lêch", "Rami", "rami123");
+		java.lang.String string1 = auditeur1.login();
+		assertEquals("lech_r", string1);
+	}
+
+	public void testNomComposeAvecAccent()
+	{
+		question3.AuditeurCNAM auditeur1 = new question3.AuditeurCNAM("lè-geçer", "Adriana", "ad12345");
+		java.lang.String string1 = auditeur1.login();
+		assertEquals("le_gec_a", string1);
+	}
+
+	public void testNomCourtComposeAvecAccent()
+	{
+		question3.AuditeurCNAM auditeur1 = new question3.AuditeurCNAM("lì-lè", "MEliana", "me12345");
+		java.lang.String string1 = auditeur1.login();
+		assertEquals("li_le_m", string1);
+	}
 }
+
+
+
+
+
+
+
+
+
+

@@ -2,8 +2,8 @@
 dependency1.from=AuditeurCNAMTest
 dependency1.to=AuditeurCNAM
 dependency1.type=UsesDependency
-package.editor.height=279
-package.editor.width=439
+package.editor.height=669
+package.editor.width=1418
 package.editor.x=12
 package.editor.y=23
 package.numDependencies=1
