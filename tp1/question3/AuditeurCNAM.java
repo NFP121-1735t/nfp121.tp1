@@ -45,7 +45,27 @@ public class AuditeurCNAM {
      *         homonymes...
      */
     public String login() {
-        return "";// à compléter
+        String n = this.nom;
+        String p = this.prenom;
+       
+        if(n.length()>6){ // recuperer la nom qui a 6 ou plus lettres
+            n=n.substring(0,6);//enlever le 6 premiers lettres du nom
+        }
+        n=n.replaceAll(" " , "_");
+        n=n.replaceAll("-","_");
+        p=p.substring(0,1); // enlever la premier lettre du prenom
+        
+
+    String fini ;
+    fini= n+ "_" +p; // camcatenation du 6 lettres avec la lettre du prenom
+     
+        fini=fini.replaceAll("[é,è,ê]" , "e");//remplacer l'accent par une 'e' sans accent
+        fini=fini.replaceAll("[î,ï,ì]" , "i");//remplace l"i" accent par une "i" sans accent
+        fini=fini.replaceAll("[Ç,ç]" , "c");//remplacer le "C" cedille par une "C" sans cedille
+        fini=fini.replaceAll("[â,à,Ä,Å]" , "a");//remplacer l"a" accent par une"A" sans accent
+        fini=fini.toLowerCase(); // transformer la username en miniscule 
+   
+        return fini;// rendre la final resultat
     }
 
     /**
@@ -54,7 +74,10 @@ public class AuditeurCNAM {
      * @return son nom
      */
     public String nom() {
-        return null;// à compléter
+      
+        String nomAuditeur=this.nom; 
+        
+        return nomAuditeur;// à compléter
     }
 
     /**
@@ -63,7 +86,9 @@ public class AuditeurCNAM {
      * @return son prénom
      */
     public String prenom() {
-        return null;// à compléter
+        String prenomAuditeur=this.prenom;
+        return prenomAuditeur;
+        // à compléter
     }
 
     /**
@@ -72,7 +97,9 @@ public class AuditeurCNAM {
      * @return son matricule
      */
     public String matricule() {
-        return null;// à compléter
+        String matriculeAuditeur=this.matricule;
+
+        return matriculeAuditeur;// à compléter
     }
 
     /**
